@@ -121,8 +121,6 @@ function getInputValue(){
     let discountAmountContainer = document.getElementById('discount-amount');
      // Selecting the input element and get its value 
      inputVal = document.getElementById("coupon-input").value;
-     // console.log(couponOne);
-     console.log(typeof inputVal);
      grandInitialTotal = totalPriceValue;
      document.getElementById('grand-totat-price-text').innerText = grandInitialTotal;
      document.getElementById('coupon-err-msg').innerText ='';
@@ -131,9 +129,8 @@ function getInputValue(){
           grandInitialTotal = document.getElementById('grand-totat-price-text');
          grandInitialTotal = Math.ceil(totalPriceValue - (totalPriceValue * .15)); 
          
-         let discountAmount = Math.ceil(totalPriceValue * .15);
-         console.log("Discount", discountAmount);
-         console.log('Discount container', discountAmountContainer);
+         let discountAmount = Math.ceil(-totalPriceValue * .15);
+
          const pNew = document.createElement('p');
          const textDisc = document.createElement('p');
          textDisc.innerText = 'Discount';
@@ -149,6 +146,18 @@ function getInputValue(){
           grandInitialTotal = document.getElementById('grand-totat-price-text');
          grandInitialTotal = Math.ceil(totalPriceValue - (totalPriceValue * .20)); 
          document.getElementById('grand-totat-price-text').innerText = grandInitialTotal;
+
+         let discountAmount = Math.ceil(-totalPriceValue * .20);
+         
+         const pNew = document.createElement('p');
+         const textDisc = document.createElement('p');
+         textDisc.innerText = 'Discount';
+         pNew.innerText = discountAmount;
+         console.log('Pnew',pNew);
+         // discountAmountContainer.innerText = discountAmount;
+         document.getElementById('discount-amount').appendChild(textDisc);
+         document.getElementById('discount-amount').appendChild(pNew);
+
          addHidden('apply-btn-hide');
      }else{
          let erroMsg = 'Enter Right Coupon';

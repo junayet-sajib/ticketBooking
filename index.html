@@ -312,26 +312,51 @@
                             <label for="p-number" class="font-semibold block pb-4 pt-4">Email ID</label>
                             <input id="passenger-email" type="text" placeholder="Enter your Email" class="input input-bordered w-full" />
                             <!-- //onclick="passengerInfo() -->
-                            <button onclick="passengerInfo()" id="form-p-info-next-btn" class="btn w-full text-white bg-[#1DD100] mt-5 font-extrabold text-xl">Next</button>
-                           
+                            <button onclick="my_modal_1.showModal()" id="form-p-info-next-btn" class="btn w-full text-white bg-[#1DD100] mt-5 font-extrabold text-xl">Next</button>
                         </div>
 
+
+                        <!-- Open the modal using ID.showModal() method -->
+                        <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+                        <dialog id="my_modal_1" class="modal">
+                        <div class="modal-box">
+                            <img class="w-20 mx-auto" src="images/success.png" alt="">
+                            <h3 class="font-bold text-lg">Success</h3>
+                            <p class="py-4"><b>Thank you for Booking Our Bus Seats. 
+                                We are working hard to find the best service and deals for you. </b> <br>
+                                Shortly you will find a confirmation in your email.</p>
+                            <div class="modal-action">
+                            <form method="dialog">
+                                <!-- if there is a button in form, it will close the modal -->
+                                <button class="btn text-center bg-[#27AE60] text-white text-xl ">Continue</button>
+                            </form>
+                            </div>
+                        </div>
+                        </dialog>
                          <!-- Modal -->
-                          <!-- Open the modal using ID.showModal() method -->
+                         <!-- Open the modal using ID.showModal() method -->
+                         <!-- <button class="btn" onclick="">open modal</button> -->
+                      
+                        <!-- <dialog id="my_modal_1" class="modal">
+                        <div class="modal-box max-h-full">
+                            <img class="w-20 mx-auto" src="images/success.png" alt="">
+                            <hr class="border-dashed border-1 border-[#1DD100] ">
+                            <h3 class="font-bold text-lg mt-5">Thank you for Booking Our Bus Seats.</h3>
+                            <p class="py-4"> 
+                                We are working hard to find the best service and deals for you.</p>
+                            <div class="modal-action"> -->
+                                <!-- // mt-1 flex justify-center -->
+                            <!-- <form method="dialog " > -->
+                                <!-- if there is a button in form, it will close the modal -->
+                                <!-- text-center bg-[#27AE60] text-white text-xl -->
+                                <!-- <button class="btn">Continue</button> -->
+                            <!-- </form> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                        <!-- </dialog> -->
+
+                        <!-- modal End -->
         
-            <dialog id="my_modal_1" class="modal">
-            <div class="modal-box">
-                <h3 class="font-bold text-lg">Hello!</h3>
-                <p class="py-4">Press ESC key or click the button below to close</p>
-                <div class="modal-action">
-                <form method="dialog">
-                    <!-- if there is a button in form, it will close the modal -->
-                    <button class="btn">Close</button>
-                </form>
-                </div>
-            </div>
-            </dialog>
-                                        <!-- End Modal -->
                     </div>
                 </div>
                </div>
