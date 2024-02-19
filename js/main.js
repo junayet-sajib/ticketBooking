@@ -10,8 +10,13 @@ let cuponInputId = document.getElementById('coupon-input');
 let totalPriceValue;
 let singleTicketPrice = 550;
 let ticketClass = 'economy';
+let grandInitialTotal;
+let elementValue;
 
 let count = 0;
+
+
+
 
 function handleUserClick(){
     let countSeat = totalNumSeats - 1;
@@ -29,7 +34,7 @@ for(const seat of totalSeats){
     seat.addEventListener('click', function(event){
         console.log(event.target.value);
 
-        let elementValue = event.target.innerText;
+     elementValue = event.target.innerText;
         console.log('Seat Id ee' ,elementValue);
         // console.log(elementValue);
         const bgChangeId = event.target.id;
@@ -37,17 +42,21 @@ for(const seat of totalSeats){
        
         // removeBgColor(bgChangeId);
         // showSeatName(bgChangeId, 550 , 'Delux');
+
         
         count = count + 1;
+
          if(count <= 4){
             totalSeltedSeatNum.innerText = count;
             setBgColor(bgChangeId);
             handleUserClick();
-         createTable('tr', 'table-body', 'td', elementValue,ticketClass,  singleTicketPrice );
+            createTable('tr', 'table-body', 'td', elementValue,ticketClass,  singleTicketPrice );
 
          const showTotalPrice = document.getElementById('totat-price-value');
         // const totalPrice = document.getElementById('totat-price-value').innerText;
          totalPriceValue = singleTicketPrice * count;
+         grandInitialTotal = totalPriceValue;
+     document.getElementById('grand-totat-price-text').innerText = grandInitialTotal;
 
         document.getElementById('totat-price-value').innerHTML = totalPriceValue;
 
@@ -56,9 +65,14 @@ for(const seat of totalSeats){
             alert('You can only Select 4 seat')
          }
 
+        console.log('Count value',count);
 
+       
     })
 }
+
+
+
 
 function setBgColor(elementId){
     const element = document.getElementById(elementId);
@@ -107,7 +121,7 @@ function removeHidden(elementId){
 
 const couponOne = 'NEW15';
 const couponTwo = 'Couple 20';
-let grandInitialTotal;
+
 
 
 
@@ -163,18 +177,39 @@ function getInputValue(){
          let erroMsg = 'Enter Right Coupon';
          document.getElementById('coupon-err-msg').innerText = erroMsg;
      }
+
+
+    
    }
     // Displaying the value
 //  console.log(inputVal);
 }
 
-function showModal(){
-    console.log("Hello form showModal");
+// function showModal(){
+//     console.log("Hello form showModal");
   
+// }
+// function passengerInfo(){
+//     var inputPassengerName = document.getElementById("passenger-name").value;
+//     var inputPassengerNum = document.getElementById("passenger-number").value;
+//     console.log(inputPassengerName, inputPassengerNum);
+//     showModal();
+// }
+
+
+const numEmpty = document.getElementById('passenger-number');
+
+numEmpty.addEventListener('change', function(){
+    console.log('Passenger number',numEmpty.value);
+    console.log(elementValue);
+if(elementValue != "" && numEmpty.value != ''){
+   document.getElementById('form-p-info-next-btn').classList.remove('btn-disabled');  
+
+   //newCopy
+} else{
+   document.getElementById('form-p-info-next-btn').classList.add('btn-disabled');  
+
 }
-function passengerInfo(){
-    var inputPassengerName = document.getElementById("passenger-name").value;
-    var inputPassengerNum = document.getElementById("passenger-number").value;
-    console.log(inputPassengerName, inputPassengerNum);
-    showModal();
-}
+
+})
+
