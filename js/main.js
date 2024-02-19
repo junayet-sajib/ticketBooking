@@ -57,24 +57,6 @@ for(const seat of totalSeats){
          }
 
 
-             
-        
-
-    
-        // console.log('Show Seat Id', showSeatId);
-        // let li = document.createElement('li');
-        // li.innerText = elementValue;
-        // let liNewValue = li.innerText;
-        // console.log(liNewValue);
-        // showSeatId.appendChild(liNewValue);
-        
-        // console.log(totalPriceValue);
-        //  const totalPriceValueInner = totalPriceValue.innerText;
-        // console.log('ticket total price', totalPriceValueInner);
-
-        // showTotalPrice.appendChild(totalPriceValueInner);
-
-        // getTotalPrice(totalPriceValue);
     })
 }
 

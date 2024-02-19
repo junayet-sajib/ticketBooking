@@ -7,3 +7,10 @@ body{
     font-family: "Raleway", sans-serif;
 }
 
+.hero-section {
+    /* background-image: url(../images/banner.png);
+     */
+     background-image: linear-gradient(180deg, rgba(19, 19, 24, 0.80) 0%, rgba(19, 19, 24, 0.00) 100%), url(../images/banner.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
